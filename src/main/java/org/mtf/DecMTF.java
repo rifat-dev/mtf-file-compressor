@@ -102,16 +102,7 @@ public class DecMTF {
         }
 
         if (lastByte == 0) {
-            String reversedBinaryString = reverseByte(preLastByte);
-            char[] charSequence = reversedBinaryString.toCharArray();
-            for (char bit : charSequence) {
-                bitBuffer.append(bit);
-                String curBitSeq = bitBuffer.toString();
-                if (prefixCodeMap.containsKey(curBitSeq)) {
-                    decodedValues.add(prefixCodeMap.get(curBitSeq));
-                    bitBuffer.setLength(0);
-                }
-            }
+            bitBuffer.setLength(0);
         } else {
             String preLastBinary = reverseByte(preLastByte);
             char[] preLastBits = preLastBinary.toCharArray();

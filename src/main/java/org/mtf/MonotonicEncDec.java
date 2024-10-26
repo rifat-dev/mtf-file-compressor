@@ -8,7 +8,14 @@ import java.util.Map;
 public class MonotonicEncDec {
 
     public static String unaryEncode(int num) {
-        return "1".repeat(Math.max(0, num)) + "0";
+        // сделал под java 1.8
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < num; i++) {
+            sb.append("1");
+        }
+        sb.append("0");
+        //return "1".repeat(Math.max(0, num)) + "0"; // для java 11
+        return sb.toString();
     }
 
     public static String monotonicEncode(int num) {

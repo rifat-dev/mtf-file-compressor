@@ -28,6 +28,7 @@ public class BinToFile {
     }
 
     public void close() throws IOException {
+        System.out.println("bitpos = " + bitPos);
         file.write(buf);
         //System.out.println("close " + Integer.toBinaryString(buf) + " bit pos: " + bitPos);
         buf = 0;
